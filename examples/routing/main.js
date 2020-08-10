@@ -1,4 +1,4 @@
-const { Api } = require(`../../api/api`)
+const { Api } = require(``)
 const { json, html } = require(`../../std/replies`)
 const { logger } = require('../../std/mw/logger')
 const { readFileSync } = require(`fs`)
