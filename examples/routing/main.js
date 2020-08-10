@@ -1,6 +1,6 @@
-const { Api } = require(`../api/api`)
-const { json, html } = require(`../std/replies`)
-const { logger } = require('../std/mw/logger')
+const { Api } = require(`../../api/api`)
+const { json, html } = require(`../../std/replies`)
+const { logger } = require('../../std/mw/logger')
 const { readFileSync } = require(`fs`)
 
 let users = JSON.parse(readFileSync('users.json').toString())

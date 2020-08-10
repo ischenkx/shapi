@@ -15,5 +15,13 @@
   "main": "-",
   "directories": {
     "example": "examples"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomanIschenko/shapi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RomanIschenko/shapi/issues"
+  },
+  "homepage": "https://github.com/RomanIschenko/shapi#readme"
 }
