@@ -1,0 +1,19 @@
+{
+  "name": "@roman_ischenko/shapi",
+  "version": "0.0.1",
+  "description": "My web api library for javascript.",
+  "scripts": {},
+  "keywords": [
+    "webapi",
+    "api",
+    "rest",
+    "js",
+    "javascript"
+  ],
+  "author": "Roman Ischenko",
+  "license": "ISC",
+  "main": "-",
+  "directories": {
+    "example": "examples"
+  }
+}
