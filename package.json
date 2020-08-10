@@ -12,7 +12,7 @@
   ],
   "author": "Roman Ischenko",
   "license": "ISC",
-  "main": "./lib",
+  "main": "lib/",
   "directories": {
     "example": "examples"
   },
