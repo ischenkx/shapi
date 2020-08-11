@@ -1,6 +1,6 @@
 {
   "name": "shapi",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "My web api library for javascript.",
   "scripts": {},
   "keywords": [
