@@ -61,13 +61,7 @@ function error(reason, status = 500) {
 }
 
 function redirect(to) {
-    return {
-        data: null,
-        headers: {
-            'Location': to
-        },
-        status: 301
-    }
+    return new RedirectReply(to)
 }
 
 exports.html = html
