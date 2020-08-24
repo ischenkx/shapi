@@ -1,3 +1,5 @@
+const fs = require('fs')
+
 const JsonReplyHeaders = {
     'Content-Type': 'application/json'
 }
@@ -48,6 +50,38 @@ class RedirectReply {
     }
 }
 
+class HtmlFileReply {
+    static files = {}
+    static useCaching = true
+
+    constructor(path) {
+        this.path = path
+    }
+
+    send(writer) {
+        writer.writeHead(200, HtmlReplyHeaders)
+        let data = null
+        if(HtmlFileReply.useCaching) {
+            data = HtmlFileReply.files[this.path]
+            if(!data) {
+                HtmlFileReply.files[this.path] = data = fs.readFileSync(this.path)
+                fs.watch(this.path, (e, file) => {
+                    HtmlFileReply.files[this.path] = fs.readFileSync(this.path)
+                })
+            }
+            writer.end(data)
+            return
+        }
+        fs.readFile(this.path, (err, data)=>{
+            if(err) {
+                error('Wrong file path: '+this.path).send(writer)
+            } else {
+                writer.end(data)
+            }
+        })
+    }
+}
+
 function json(data) {
     return new JsonReply(data)
 }
@@ -64,7 +98,10 @@ function redirect(to) {
     return new RedirectReply(to)
 }
 
-exports.html = html
-exports.json = json
-exports.error = error
-exports.redirect = redirect
+function htmlFile(path) {
+    return new HtmlFileReply(path)
+}
+
+module.exports = {
+    html, htmlFile, json, error, redirect
+}

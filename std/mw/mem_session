@@ -1,0 +1,8 @@
+
+
+function memorySession(config) {
+    config = config||{}
+    return req => {
+
+    }
+}

@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/RomanIschenko/shapi/issues"
   },
-  "homepage": "https://github.com/RomanIschenko/shapi#readme"
+  "homepage": "https://github.com/RomanIschenko/shapi#readme",
+  "dependencies": {
+    "nodemon": "^2.0.4"
+  }
 }

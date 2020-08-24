@@ -5,11 +5,11 @@ const { Request } = require(`./lib/request/request.js`)
 const { RouteBuilder } = require(`./lib/router/route_builder.js`)
 
 class Api extends Context {
-    constructor(cfg = null) {
+    constructor(cfg = {}) {
         cfg = cfg || {}
         super(cfg.context)
-        this.server = new Server(cfg.serverConfig)
-        this.router = new Router(cfg.vars)
+        this.server = new Server(cfg.server)
+        this.router = new Router(cfg.router)
         this.server.onclient((rawReq, rawRes) => {
             let req = new Request(rawReq, rawRes, this)
             this.router.process(req, rawRes)
@@ -35,12 +35,16 @@ class Api extends Context {
         this.router.setup()
         try {
             let opts = await this.server.run()
-            console.log(`
-                Japi started at port ${opts.port}
-            `)
+            let output = `Shapi started at port ${opts.port}`
+            console.log(('-').repeat(output.length+4))
+            console.log(`|${(' ').repeat(output.length+2)}|`)
+            console.log(`| \x1b[32m${output}\x1b[0m |`)
+            console.log(`|${(' ').repeat(output.length+2)}|`)
+
+            console.log(('-').repeat(output.length+4))
         }
         catch (e) {
-            console.log(e)
+            console.error(e)
         }
     }
 
