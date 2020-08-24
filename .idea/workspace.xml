@@ -20,21 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21bcec4a-43c5-43d4-b79a-dd2135ba764a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/std/helpers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/std/mw/mem_session" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/callable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/parse_cookies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/http_server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/http_server/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/request/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/request/request.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/router/route_builder.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/router/route_builder.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/router/route_part.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/router/route_part.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/router/route_part_reader.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/router/route_part_reader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/router/route_tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/router/route_tree.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/router/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/reflect.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/reflect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/reflect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/std/replies.js" beforeDir="false" afterPath="$PROJECT_DIR$/std/replies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/std/mw/logger.js" beforeDir="false" afterPath="$PROJECT_DIR$/std/mw/logger.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/std/mw/mem_session" beforeDir="false" afterPath="$PROJECT_DIR$/std/mw/mem_session" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +64,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code\js\shapi\tests\static" />
+      <recent name="D:\code\js\shapi\tests" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -74,7 +81,8 @@
       <option name="presentableId" value="Default" />
       <updated>1598219407602</updated>
       <workItem from="1598219409376" duration="6275000" />
-      <workItem from="1598269006418" duration="1309000" />
+      <workItem from="1598269006418" duration="7790000" />
+      <workItem from="1598284989745" duration="14545000" />
     </task>
     <servers />
   </component>
@@ -94,17 +102,21 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="439" y="204" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598219832856">
+    <state x="439" y="204" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598294712314">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state x="439" y="204" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.920@0.0.1707.920" timestamp="1598219832856" />
+    <state x="439" y="204" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.920@0.0.1707.920" timestamp="1598294712314" />
     <state x="355" y="106" key="SettingsEditor" timestamp="1598219429775">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="355" y="106" key="SettingsEditor/0.0.1707.920@0.0.1707.920" timestamp="1598219429775" />
-    <state x="0" y="0" width="962" height="924" key="find.popup" timestamp="1598223863751">
+    <state x="0" y="0" width="962" height="920" key="find.popup" timestamp="1598297345387">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state x="0" y="0" width="962" height="924" key="find.popup/0.0.1707.920@0.0.1707.920" timestamp="1598223863751" />
+    <state x="0" y="0" width="962" height="920" key="find.popup/0.0.1707.920@0.0.1707.920" timestamp="1598297345387" />
+    <state x="263" y="-2" width="1177" height="1976" key="search.everywhere.popup" timestamp="1598295574056">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="263" y="-2" width="1177" height="1976" key="search.everywhere.popup/0.0.1707.920@0.0.1707.920" timestamp="1598295574056" />
   </component>
 </project>

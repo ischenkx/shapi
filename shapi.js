@@ -1,10 +1,10 @@
 const Context = require(`./lib/context/context.js`)
-const { Server } = require(`./lib/http_server/server.js`)
-const { Router } = require(`./lib/router/router.js`)
-const { Request } = require(`./lib/request/request.js`)
-const { RouteBuilder } = require(`./lib/router/route_builder.js`)
+const Server = require(`./lib/http_server/server.js`)
+const Router = require(`./lib/router/router.js`)
+const Request = require(`./lib/request/request.js`)
+const RouteBuilder = require(`./lib/router/route_builder.js`)
 
-class Api extends Context {
+class Shapi extends Context {
     constructor(cfg = {}) {
         cfg = cfg || {}
         super(cfg.context)
@@ -57,4 +57,4 @@ class Api extends Context {
     }
 }
 
-module.exports = Api
+module.exports = Shapi

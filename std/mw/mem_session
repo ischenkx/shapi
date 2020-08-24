@@ -1,8 +1,65 @@
+const {v4: uuid} = require('uuid')
 
-
-function memorySession(config) {
-    config = config||{}
-    return req => {
-
+class MemorySession {
+    constructor(id) {
+        this.data = {}
+        this._id = id
     }
+
+    get id() {
+        return this._id
+    }
+
+    get(key) {
+        return this.data[key]
+    }
+
+    set(key, val) {
+        this.data[key] = val
+    }
+}
+
+class MemorySessionManager {
+    constructor() {
+        this.data = {}
+    }
+
+    create() {
+        const id = uuid()
+        this.data[id] = new MemorySession(id)
+        return this.data[id]
+    }
+
+    get(id) {
+        return this.data[id]
+    }
+
+    async call(_req) {
+        let id = (await _req.getCookies())['session_id']
+        if(id) {
+            _req.session = this.get(id)
+            if(_req.session) return
+        }
+        _req.session = {
+            realSession: null,
+            set: (key, val)=>{
+                if(this.realSession) {
+                    this.realSession.set(key, val)
+                    return
+                }
+                _req.session = this.create()
+                _req.session.set(key, val)
+                _req.setCookie('session_id', _req.session.id)
+                this.realSession = _req.session
+            },
+            get: key=> this.realSession ? this.realSession.get(key) : null,
+            get id() {return this.realSession ? this.realSession.id : null}
+        }
+    }
+}
+
+
+
+module.exports = function memorySession() {
+    return new MemorySessionManager()
 }
