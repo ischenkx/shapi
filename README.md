@@ -29,7 +29,8 @@ endpoint.with('/get')
             let result = []
             for(let id in users) {
                 let user = users[id]
-                if(user.name.toLowerCase().includes(data) || user.surname.toLowerCase().includes(data)) {
+                if(user.name.toLowerCase().includes(data) || 
+                    user.surname.toLowerCase().includes(data)) {
                     result.push(user)
                 }
             }
